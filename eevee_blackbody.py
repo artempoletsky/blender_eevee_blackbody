@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Eevee blackbody",
     "author": "Artem Poletsky",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 82, 0),
     "location": "Eevee -> light settings",
     "description": "Adds support of blackbody to eevee",
@@ -11,6 +11,7 @@ bl_info = {
 }
 
 import bpy
+from bpy.app.handlers import persistent
 
 def driver_add(light):
     driver = light.driver_add('color')
@@ -94,6 +95,7 @@ def update_light(light):
     blackbody = light.blackbody
     light.color = blackbody_temp_to_color(blackbody)
 
+@persistent
 def on_update_scene(scene):
     lights = [o for o in scene.objects if o.type == 'LIGHT']
     for l in lights:
