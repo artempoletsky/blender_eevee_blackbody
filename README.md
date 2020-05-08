@@ -18,7 +18,9 @@ The temperature to color algorythm is taken from Blender sources, so results sho
 
 ## Support 
 You can support me directly via PayPal
+
 https://www.paypal.me/apoletsky
 
 Or you can check out one of my paid addons. 
+
 https://gumroad.com/artempoletsky
