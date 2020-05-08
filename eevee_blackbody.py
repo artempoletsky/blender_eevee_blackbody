@@ -36,8 +36,11 @@ def eevee_light_settings(self, context):
     layout = self.layout
     layout.separator()
     light = context.light
+    # if not 'blackbody' in light:
+        # light.blackbody = bpy.props.IntProperty(name="Blackbody temperature", default=1500)
 
-    layout.prop(light, "color")
+    layout.prop(light, "use_blackbody")
+    layout.prop(light, "blackbody")
     # layout.operator_context = "INVOKE_DEFAULT"
     # layout.operator(ScaleWithModifiersOperator.bl_idname, text=ScaleWithModifiersOperator.bl_label)
 
@@ -51,7 +54,8 @@ def register():
     # for cls in classes:
     #     register_class(cls)
 
-
+    bpy.types.Light.blackbody =  bpy.props.IntProperty(name="Blackbody temperature", default=1500)
+    bpy.types.Light.use_blackbody =  bpy.props.BoolProperty(name="Use blackbody temperature", default=False)
     bpy.types.DATA_PT_EEVEE_light.append(eevee_light_settings)
 
 def unregister():
