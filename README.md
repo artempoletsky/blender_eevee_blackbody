@@ -12,7 +12,7 @@ A Blender addon that adds the blackbody support to Eevee
 2. Set `Use blackbody temperature` on. 
 3. Enter the blackbody temperature.
 
-You cant use this feature together with `Use nodes` option. 
+You can't use this feature together with `Use nodes` option. 
 
 The temperature to color algorythm is taken from Blender sources, so results should be like in cycles. 
 
