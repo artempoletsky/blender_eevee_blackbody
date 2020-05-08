@@ -17,10 +17,6 @@ You can't use this feature together with `Use nodes` option.
 The temperature to color algorythm is taken from Blender sources, so results should be like in cycles. 
 
 ## Support 
-You can support me directly via PayPal
+You can support me directly via PayPal: https://www.paypal.me/apoletsky
 
-https://www.paypal.me/apoletsky
-
-Or you can check out one of my paid addons. 
-
-https://gumroad.com/artempoletsky
+Or you can check out one of my paid addons:  https://gumroad.com/artempoletsky
