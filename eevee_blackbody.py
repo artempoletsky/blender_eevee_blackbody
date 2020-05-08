@@ -90,6 +90,7 @@ def update_light(light):
     if not light.use_blackbody:
         return
 
+    light.use_nodes = False
     blackbody = light.blackbody
     light.color = blackbody_temp_to_color(blackbody)
 
@@ -103,6 +104,7 @@ def register():
     bpy.types.Light.blackbody =  bpy.props.IntProperty(name="Blackbody temperature", default=1500)
     bpy.types.Light.use_blackbody =  bpy.props.BoolProperty(name="Use blackbody temperature", default=False)
     bpy.types.DATA_PT_EEVEE_light.append(eevee_light_settings)
+    bpy.types.CYCLES_LIGHT_PT_light.append(eevee_light_settings)
     bpy.app.handlers.depsgraph_update_post.append(on_update_scene)
     bpy.app.handlers.frame_change_post.append(on_update_scene)
 
@@ -110,6 +112,7 @@ def unregister():
 
     bpy.types.DATA_PT_EEVEE_light.remove(eevee_light_settings)
     bpy.app.handlers.depsgraph_update_post.remove(on_update_scene)
+    bpy.types.CYCLES_LIGHT_PT_light.remove(eevee_light_settings)
     bpy.app.handlers.frame_change_post.remove(on_update_scene)
 
 if __name__ == "__main__":
