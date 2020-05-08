@@ -1,0 +1,4 @@
+*.blend
+*.blend1
+/demo video
+/__pycache__
